@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konsulta — Simplifiez la gestion de votre cabinet médical</title>
+  <meta name="description" content="Konsulta est un logiciel de gestion de cabinet médical : patients, consultations, ordonnances, factures et statistiques, réunis dans une seule application simple." />
+
+  <!-- Polices : Manrope pour les titres (caractère, confiance), Inter pour le texte courant (lisibilité) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon texte simple (aucun fichier image requis) -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+  <!-- ============================================================
+       EN-TÊTE / NAVIGATION
+       Barre fixe en haut, menu qui devient un menu "hamburger" sur mobile
+       (voir script.js pour l'interaction d'ouverture/fermeture)
+  ============================================================ -->
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a href="#top" class="logo" aria-label="Konsulta — Accueil">
+        <span class="logo-mark" aria-hidden="true"><img src="assets/logo-icon.png" alt="" /></span>
+        <span class="logo-text">Konsulta</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav">
+        <a href="#accueil">Accueil</a>
+        <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#tutoriels">Tutoriels</a>
+        <a href="#telechargement">Téléchargement</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — ACCUEIL / HERO
+         Slogan principal + aperçu du logiciel dans un cadre "fenêtre"
+    ============================================================ -->
+    <section class="hero" id="accueil">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Logiciel de gestion de cabinet médical</p>
+          <h1>Konsulta : simplifiez la gestion de votre cabinet médical</h1>
+          <p class="hero-lead">
+            Patients, consultations, ordonnances, factures et statistiques —
+            réunis dans un seul logiciel pensé pour les médecins et le
+            personnel de santé. Sans complexité inutile.
+          </p>
+          <div class="hero-actions">
+            <a href="#telechargement" class="btn btn-primary">Télécharger Konsulta</a>
+            <a href="#fonctionnalites" class="btn btn-ghost">Voir les fonctionnalités</a>
+          </div>
+          <p class="hero-note">Essai gratuit de 10 jours · Aucune carte bancaire requise</p>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <!--
+            Aperçu réel du tableau de bord de Konsulta (assets/capture-tableau-de-bord.png).
+            Pour le remplacer par une capture plus récente, déposez la nouvelle
+            image dans /assets et changez le nom de fichier ci-dessous.
+          -->
+          <div class="device-frame">
+            <div class="device-bar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+            <img
+              src="assets/capture-tableau-de-bord.png"
+              alt="Aperçu du tableau de bord de Konsulta"
+              class="device-screen"
+              width="1200" height="520" loading="eager" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Bandeau de repères concrets — défilement doux, s'arrête si l'utilisateur préfère moins d'animation -->
+      <div class="stat-strip" role="note" aria-label="Repères clés sur Konsulta">
+        <div class="stat-track">
+          <span>🗂️ Dossiers patients illimités</span>
+          <span>💊 Base de médicaments malgache intégrée</span>
+          <span>💾 Sauvegarde automatique</span>
+          <span>🖥️ Un seul poste ou plusieurs, en réseau</span>
+          <span>📄 Ordonnances &amp; certificats générés automatiquement</span>
+          <span>🇲🇬 Conçu pour les cabinets à Madagascar</span>
+          <!-- dupliqué pour un défilement continu sans coupure -->
+          <span aria-hidden="true">🗂️ Dossiers patients illimités</span>
+          <span aria-hidden="true">💊 Base de médicaments malgache intégrée</span>
+          <span aria-hidden="true">💾 Sauvegarde automatique</span>
+          <span aria-hidden="true">🖥️ Un seul poste ou plusieurs, en réseau</span>
+          <span aria-hidden="true">📄 Ordonnances &amp; certificats générés automatiquement</span>
+          <span aria-hidden="true">🇲🇬 Conçu pour les cabinets à Madagascar</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — PRÉSENTATION DU LOGICIEL
+    ============================================================ -->
+    <section class="section presentation" id="presentation">
+      <div class="wrap presentation-grid">
+        <div class="presentation-text">
+          <p class="eyebrow">Présentation</p>
+          <h2>Un cabinet médical, une seule application</h2>
+          <p>
+            Konsulta remplace les classeurs, les fiches volantes et les
+            fichiers dispersés par une application unique : chaque dossier
+            patient, chaque ordonnance, chaque facture reste au même endroit,
+            accessible en quelques clics.
+          </p>
+          <p>
+            Le logiciel s'installe directement sur votre ordinateur — aucune
+            connexion internet n'est nécessaire au quotidien — et peut aussi
+            fonctionner en réseau si plusieurs médecins ou secrétaires
+            travaillent sur les mêmes dossiers.
+          </p>
+        </div>
+
+        <ul class="mini-points">
+          <li>
+            <strong>Installation simple</strong>
+            <span>Un seul fichier à exécuter, aucune compétence technique requise.</span>
+          </li>
+          <li>
+            <strong>Données protégées</strong>
+            <span>Sauvegarde automatique de votre base de données, à intervalle régulier.</span>
+          </li>
+          <li>
+            <strong>Évolutif</strong>
+            <span>D'un poste unique à un cabinet avec plusieurs praticiens en réseau.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — FONCTIONNALITÉS
+         Grille de 6 cartes, une par fonctionnalité demandée
+    ============================================================ -->
+    <section class="section features" id="fonctionnalites">
+      <div class="wrap">
+        <p class="eyebrow center">Fonctionnalités</p>
+        <h2 class="center">Tout ce qu'il faut pour gérer votre cabinet</h2>
+
+        <div class="feature-grid">
+
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <!-- Icône : dossier / patients -->
+              <svg viewBox="0 0 48 48" fill="none"><path d="M6 14a4 4 0 0 1 4-4h9l4 5h15a4 4 0 0 1 4 4v17a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V14Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Gestion des patients</h3>
+            <p>Créez et retrouvez chaque dossier patient en quelques secondes : identité, contact, antécédents, tout au même endroit.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <!-- Icône : dossier médical / stéthoscope -->
+              <svg viewBox="0 0 48 48" fill="none"><path d="M14 6v14a10 10 0 0 0 20 0V6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="38" cy="30" r="4" stroke="currentColor" stroke-width="2.5"/><path d="M34 20v6a10 10 0 0 1-20 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Dossier médical informatisé</h3>
+            <p>Historique médical, antécédents, allergies et constantes vitales, conservés de façon structurée et toujours accessibles.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <!-- Icône : consultation / calendrier -->
+              <svg viewBox="0 0 48 48" fill="none"><rect x="7" y="10" width="34" height="30" rx="4" stroke="currentColor" stroke-width="2.5"/><path d="M7 19h34M15 6v7M33 6v7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Consultations</h3>
+            <p>Enregistrez chaque consultation avec ses observations, son diagnostic et son suivi, relié automatiquement au bon patient.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <!-- Icône : ordonnance -->
+              <svg viewBox="0 0 48 48" fill="none"><path d="M12 6h24v36l-6-4-6 4-6-4-6 4V6Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M18 16h12M18 23h12M18 30h7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Ordonnances</h3>
+            <p>Générez des ordonnances claires et conformes en quelques clics, prêtes à imprimer ou à transmettre au patient.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <!-- Icône : médicaments -->
+              <svg viewBox="0 0 48 48" fill="none"><rect x="9" y="20" width="30" height="16" rx="8" stroke="currentColor" stroke-width="2.5"/><path d="M24 20v16" stroke="currentColor" stroke-width="2.5"/><path d="M14 12h20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Gestion des médicaments</h3>
+            <p>Recherchez un médicament dans une base intégrée et l'ajoutez directement à une ordonnance, avec dosage et présentation.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <!-- Icône : statistiques -->
+              <svg viewBox="0 0 48 48" fill="none"><path d="M8 40V8M8 40h32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="14" y="24" width="6" height="12" fill="currentColor"/><rect x="24" y="16" width="6" height="20" fill="currentColor"/><rect x="34" y="10" width="6" height="26" fill="currentColor"/></svg>
+            </span>
+            <h3>Statistiques &amp; rapports</h3>
+            <p>Visualisez l'activité de votre cabinet : nombre de consultations, revenus, patients suivis, sur des périodes choisies.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — CAPTURES D'ÉCRAN
+    ============================================================ -->
+    <section class="section screenshots" id="captures">
+      <div class="wrap">
+        <p class="eyebrow center">En images</p>
+        <h2 class="center">Un aperçu de l'interface</h2>
+        <p class="section-lead center">
+          Les captures ci-dessous proviennent directement de l'application.
+        </p>
+
+        <!--
+          GALERIE DE CAPTURES — pour chaque <figure>, remplacez l'attribut
+          src par le chemin de votre image (ex: assets/capture-ordonnance.png)
+        -->
+        <div class="screenshot-grid">
+          <figure class="screenshot-card">
+            <img src="assets/capture-patient.png" alt="Capture d'écran : dossier patient" loading="lazy" />
+            <figcaption>Dossier patient</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="assets/capture-ordonnance.png" alt="Capture d'écran : création d'une ordonnance" loading="lazy" />
+            <figcaption>Création d'une ordonnance</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="assets/capture-facture.png" alt="Capture d'écran : facturation" loading="lazy" />
+            <figcaption>Facturation</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="assets/capture-statistiques.png" alt="Capture d'écran : tableau de statistiques" loading="lazy" />
+            <figcaption>Statistiques du cabinet</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — TUTORIELS VIDÉO
+    ============================================================ -->
+    <section class="section tutorials" id="tutoriels">
+      <div class="wrap">
+        <p class="eyebrow center">Apprendre</p>
+        <h2 class="center">Tutoriels d'utilisation</h2>
+        <p class="section-lead center">
+          Remplacez les liens ci-dessous par vos propres vidéos YouTube
+          (recherchez <code>VOTRE_ID_VIDEO</code> dans le code source).
+        </p>
+
+        <div class="tutorial-grid">
+          <a class="tutorial-card" href="https://www.youtube.com/watch?v=VOTRE_ID_VIDEO_1" target="_blank" rel="noopener">
+            <span class="tutorial-thumb" aria-hidden="true">▶</span>
+            <span class="tutorial-title">Prise en main de Konsulta</span>
+            <span class="tutorial-meta">Premiers pas · 5 min</span>
+          </a>
+          <a class="tutorial-card" href="https://www.youtube.com/watch?v=VOTRE_ID_VIDEO_2" target="_blank" rel="noopener">
+            <span class="tutorial-thumb" aria-hidden="true">▶</span>
+            <span class="tutorial-title">Créer un dossier patient</span>
+            <span class="tutorial-meta">Tutoriel · 4 min</span>
+          </a>
+          <a class="tutorial-card" href="https://www.youtube.com/watch?v=VOTRE_ID_VIDEO_3" target="_blank" rel="noopener">
+            <span class="tutorial-thumb" aria-hidden="true">▶</span>
+            <span class="tutorial-title">Rédiger une ordonnance</span>
+            <span class="tutorial-meta">Tutoriel · 6 min</span>
+          </a>
+          <a class="tutorial-card" href="https://www.youtube.com/watch?v=VOTRE_ID_VIDEO_4" target="_blank" rel="noopener">
+            <span class="tutorial-thumb" aria-hidden="true">▶</span>
+            <span class="tutorial-title">Sauvegarder ses données</span>
+            <span class="tutorial-meta">Tutoriel · 3 min</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — TÉLÉCHARGEMENT
+    ============================================================ -->
+    <section class="section download" id="telechargement">
+      <div class="wrap download-inner">
+        <p class="eyebrow center">Téléchargement</p>
+        <h2 class="center">Essayez Konsulta gratuitement</h2>
+        <p class="section-lead center">
+          10 jours d'essai complet, sans engagement. Installation en quelques minutes.
+        </p>
+
+        <div class="download-card">
+          <div class="download-info">
+            <h3>Konsulta pour Windows</h3>
+            <p>Compatible Windows 10 et 11 · Installation locale · Fonctionne hors connexion</p>
+          </div>
+          <!--
+            LIEN DE TÉLÉCHARGEMENT — Konsulta.exe fait ~50 Mo : trop volumineux
+            pour être simplement déposé dans le dépôt GitHub Pages. Utilisez
+            une "Release" GitHub à la place (gratuit, jusqu'à 2 Go par fichier) :
+              1) Sur votre dépôt GitHub → onglet "Releases" → "Create a new release"
+              2) Glissez Konsulta.exe (ou un .zip) dans "Attach binaries"
+              3) Publiez, puis copiez le lien du fichier attaché
+              4) Remplacez le href="#" ci-dessous par ce lien
+            (voir les instructions détaillées données dans la conversation)
+          -->
+          <a href="#" class="btn btn-primary btn-large" download>⬇ Télécharger Konsulta (.exe)</a>
+        </div>
+
+        <p class="download-note">
+          Besoin d'aide pour l'installation ? Consultez la section
+          <a href="#tutoriels">Tutoriels</a> ou <a href="#contact">contactez-nous</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — FAQ (accordéon géré par script.js)
+    ============================================================ -->
+    <section class="section faq" id="faq">
+      <div class="wrap faq-wrap">
+        <p class="eyebrow center">Questions fréquentes</p>
+        <h2 class="center">Vous vous posez peut-être ces questions</h2>
+
+        <div class="accordion" id="accordion">
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              Konsulta fonctionne-t-il sans connexion internet ?
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Oui. Konsulta fonctionne entièrement en local sur votre ordinateur — une connexion internet n'est nécessaire que pour le téléchargement initial et, éventuellement, l'activation d'une licence.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              Puis-je l'utiliser sur plusieurs postes en même temps ?
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Oui. Konsulta démarre en mode un seul poste par défaut, mais peut être configuré pour fonctionner en réseau, avec plusieurs médecins ou secrétaires partageant les mêmes dossiers en temps réel.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              Mes données sont-elles sauvegardées automatiquement ?
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Oui. Vous choisissez un dossier de sauvegarde, et Konsulta s'occupe du reste à intervalle régulier. Une sauvegarde manuelle immédiate est aussi disponible à tout moment.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              Que se passe-t-il à la fin de l'essai gratuit ?
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Après 10 jours, une licence est nécessaire pour continuer à utiliser Konsulta. Vos données restent intactes et sont immédiatement accessibles dès l'activation d'une licence.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              Le logiciel est-il difficile à prendre en main ?
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Non. Konsulta a été pensé pour être utilisable sans formation technique. Des tutoriels vidéo courts sont aussi disponibles pour chaque fonctionnalité principale.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — CONTACT
+    ============================================================ -->
+    <section class="section contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-text">
+          <p class="eyebrow">Contact</p>
+          <h2>Une question ? Parlons-en.</h2>
+          <p>
+            Que ce soit pour une démonstration, une question technique ou
+            une demande spécifique à votre cabinet, écrivez-nous.
+          </p>
+          <ul class="contact-methods">
+            <li>📧 <a href="mailto:contact@konsulta.mg">contact@konsulta.mg</a></li>
+            <li>📱 <a href="https://wa.me/261348656407" target="_blank" rel="noopener">+261 34 86 564 07 (WhatsApp)</a></li>
+          </ul>
+        </div>
+
+        <!--
+          FORMULAIRE DE CONTACT — connecté à Formspree (formulaire configuré).
+          Les messages envoyés depuis ce formulaire arrivent directement dans
+          votre tableau de bord Formspree (et par e-mail selon vos réglages
+          sur formspree.io).
+        -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xvzejear" method="POST">
+          <label>
+            Nom
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Envoyer le message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       PIED DE PAGE
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark small" aria-hidden="true"><img src="assets/logo-icon.png" alt="" /></span>
+        <span>Konsulta</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#accueil">Accueil</a>
+        <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#tutoriels">Tutoriels</a>
+        <a href="#telechargement">Téléchargement</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">© <span id="year"></span> Konsulta. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
