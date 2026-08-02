@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (formAction.includes('YOUR_FORM_ID')) {
         const subject = encodeURIComponent(`Contact depuis le site Konsulta — ${name}`);
         const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-        window.location.href = `mailto:contact@konsulta.mg?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:rnpfabien@gmail.mg?subject=${subject}&body=${body}`;
         formStatus.textContent = "Ouverture de votre messagerie… (configurez Formspree pour un envoi direct depuis le site)";
         formStatus.classList.remove('error');
         return;
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error('Réponse du serveur non valide');
         }
       } catch (error) {
-        formStatus.textContent = "Erreur d'envoi. Écrivez-nous directement à contact@konsulta.mg.";
+        formStatus.textContent = "Erreur d'envoi. Écrivez-nous directement à rnpfabien@gmail.mg.";
         formStatus.classList.add('error');
       }
     });
