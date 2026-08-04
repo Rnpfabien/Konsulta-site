@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SITEMAP — aide Google à découvrir et indexer les sections du site.
+  Le site est une seule page avec des ancres (#accueil, #konsultam, etc.),
+  donc une seule URL est listée ici. Mettez à jour <loc> si l'adresse du
+  site change, et <lastmod> quand vous publiez une modification notable.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://rnpfabien.github.io/Konsulta-site/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
