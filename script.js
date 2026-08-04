@@ -31,14 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ----------------------------------------------------------
-     1bis) SOUS-MENU "NOS LOGICIELS" (Konsulta / KonsultaM)
-     L'ouverture au survol pur en CSS (:hover) se refermait dès que
-     la souris traversait le petit espace visuel entre le bouton et
-     le sous-menu (le pointeur n'est alors sur aucun élément pendant
-     une fraction de seconde). On pilote donc l'ouverture/fermeture
-     ici en JS, avec un petit délai à la fermeture qui laisse le
-     temps de rejoindre le sous-menu sans qu'il se referme entre-temps.
-     Le clic reste géré en parallèle pour le mobile/tactile et le clavier.
+     1bis) SOUS-MENU "NOS LOGICIELS"
+     Délai à la fermeture pour éviter que le survol casse en
+     traversant l'espace entre le bouton et le menu. Clic géré
+     en parallèle pour mobile/clavier.
   ---------------------------------------------------------- */
   const navDropdown = document.getElementById('navDropdown');
   const navDropdownToggle = document.getElementById('navDropdownToggle');

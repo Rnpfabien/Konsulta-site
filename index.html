@@ -6,18 +6,10 @@
   <title>Konsulta — Simplifiez la gestion de votre cabinet médical</title>
   <meta name="description" content="Konsulta est un logiciel de gestion de cabinet médical : patients, consultations, ordonnances, factures et statistiques, réunis dans une seule application simple. Découvrez aussi KonsultaM, notre application mobile gratuite de recherche de médicaments à Madagascar." />
 
-  <!--
-    URL CANONIQUE — à adapter si votre site GitHub Pages a une adresse
-    différente (Réglages du dépôt → Pages → l'URL affichée en haut).
-  -->
+  <!-- à changer si l'adresse du site change -->
   <link rel="canonical" href="https://rnpfabien.github.io/Konsulta-site/" />
 
-  <!-- ============================================================
-       PARTAGE SOCIAL (Open Graph / Twitter Card)
-       Contrôle l'aperçu affiché quand le lien du site est partagé sur
-       WhatsApp, Facebook, Messenger, etc. Remplacez og:url si l'adresse
-       finale du site diffère de celle indiquée ci-dessus.
-  ============================================================ -->
+  <!-- aperçu de partage (og:url à changer si l'adresse du site change) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Konsulta" />
   <meta property="og:title" content="Konsulta — Logiciel de gestion de cabinet médical" />
@@ -40,10 +32,7 @@
   <!-- Favicon (le fichier assets/favicon.png n'existait pas — on utilise le logo réel) -->
   <link rel="icon" type="image/png" href="assets/logo-icon.png">
 
-  <!-- ============================================================
-       DONNÉES STRUCTURÉES (schema.org) — aide Google à comprendre
-       qu'il s'agit d'un logiciel, et à afficher un résultat enrichi.
-  ============================================================ -->
+  <!-- schema.org, Konsulta + KonsultaM -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -78,11 +67,7 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       EN-TÊTE / NAVIGATION
-       Barre fixe en haut, menu qui devient un menu "hamburger" sur mobile
-       (voir script.js pour l'interaction d'ouverture/fermeture)
-  ============================================================ -->
+  <!-- nav -->
   <header class="site-header" id="top">
     <div class="wrap header-inner">
       <a href="#top" class="logo" aria-label="Konsulta — Accueil">
@@ -100,12 +85,7 @@
         <a href="#tutoriels">Tutoriels</a>
         <a href="#telechargement">Téléchargement</a>
 
-        <!--
-          SOUS-MENU — NOS LOGICIELS
-          Regroupe Konsulta (cabinet médical) et KonsultaM (app mobile
-          gratuite). Sur desktop : s'ouvre au clic/survol via CSS.
-          Sur mobile : s'ouvre au clic, géré par script.js (bloc 1bis).
-        -->
+        <!-- sous-menu Konsulta / KonsultaM, géré en JS (script.js) -->
         <div class="nav-dropdown" id="navDropdown">
           <button class="nav-dropdown-toggle" id="navDropdownToggle" aria-expanded="false" aria-controls="navDropdownMenu">
             Nos logiciels <span class="badge-new" aria-hidden="true">Nouveau</span> <span class="nav-dropdown-arrow" aria-hidden="true">▾</span>
@@ -129,10 +109,7 @@
 
   <main>
 
-    <!-- ============================================================
-         SECTION 1 — ACCUEIL / HERO
-         Slogan principal + aperçu du logiciel dans un cadre "fenêtre"
-    ============================================================ -->
+    <!-- hero -->
     <section class="hero" id="accueil">
       <div class="wrap hero-grid">
         <div class="hero-copy">
@@ -151,11 +128,7 @@
         </div>
 
         <div class="hero-visual" aria-hidden="true">
-          <!--
-            Aperçu réel du tableau de bord de Konsulta (assets/capture-tableau-de-bord.png).
-            Pour le remplacer par une capture plus récente, déposez la nouvelle
-            image dans /assets et changez le nom de fichier ci-dessous.
-          -->
+          <!-- capture réelle du tableau de bord -->
           <div class="device-frame">
             <div class="device-bar">
               <span class="dot"></span><span class="dot"></span><span class="dot"></span>
@@ -191,9 +164,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 2 — PRÉSENTATION DU LOGICIEL
-    ============================================================ -->
     <section class="section presentation" id="presentation">
       <div class="wrap presentation-grid">
         <div class="presentation-text">
@@ -230,10 +200,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 3 — FONCTIONNALITÉS
-         Grille de 6 cartes, une par fonctionnalité demandée
-    ============================================================ -->
+    <!-- fonctionnalités -->
     <section class="section features" id="fonctionnalites">
       <div class="wrap">
         <p class="eyebrow center">Fonctionnalités</p>
@@ -252,7 +219,6 @@
 
           <article class="feature-card">
             <span class="feature-icon" aria-hidden="true">
-              <!-- Icône : dossier médical / stéthoscope -->
               <svg viewBox="0 0 48 48" fill="none"><path d="M14 6v14a10 10 0 0 0 20 0V6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="38" cy="30" r="4" stroke="currentColor" stroke-width="2.5"/><path d="M34 20v6a10 10 0 0 1-20 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
             </span>
             <h3>Dossier médical informatisé</h3>
@@ -261,7 +227,6 @@
 
           <article class="feature-card">
             <span class="feature-icon" aria-hidden="true">
-              <!-- Icône : consultation / calendrier -->
               <svg viewBox="0 0 48 48" fill="none"><rect x="7" y="10" width="34" height="30" rx="4" stroke="currentColor" stroke-width="2.5"/><path d="M7 19h34M15 6v7M33 6v7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
             </span>
             <h3>Consultations</h3>
@@ -270,7 +235,6 @@
 
           <article class="feature-card">
             <span class="feature-icon" aria-hidden="true">
-              <!-- Icône : ordonnance -->
               <svg viewBox="0 0 48 48" fill="none"><path d="M12 6h24v36l-6-4-6 4-6-4-6 4V6Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M18 16h12M18 23h12M18 30h7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
             </span>
             <h3>Ordonnances</h3>
@@ -279,7 +243,6 @@
 
           <article class="feature-card">
             <span class="feature-icon" aria-hidden="true">
-              <!-- Icône : médicaments -->
               <svg viewBox="0 0 48 48" fill="none"><rect x="9" y="20" width="30" height="16" rx="8" stroke="currentColor" stroke-width="2.5"/><path d="M24 20v16" stroke="currentColor" stroke-width="2.5"/><path d="M14 12h20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
             </span>
             <h3>Gestion des médicaments</h3>
@@ -288,7 +251,6 @@
 
           <article class="feature-card">
             <span class="feature-icon" aria-hidden="true">
-              <!-- Icône : statistiques -->
               <svg viewBox="0 0 48 48" fill="none"><path d="M8 40V8M8 40h32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="14" y="24" width="6" height="12" fill="currentColor"/><rect x="24" y="16" width="6" height="20" fill="currentColor"/><rect x="34" y="10" width="6" height="26" fill="currentColor"/></svg>
             </span>
             <h3>Statistiques &amp; rapports</h3>
@@ -299,9 +261,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION — CAPTURES D'ÉCRAN
-    ============================================================ -->
     <section class="section screenshots" id="captures">
       <div class="wrap">
         <p class="eyebrow center">En images</p>
@@ -310,10 +269,6 @@
           Les captures ci-dessous proviennent directement de l'application.
         </p>
 
-        <!--
-          GALERIE DE CAPTURES — pour chaque <figure>, remplacez l'attribut
-          src par le chemin de votre image (ex: assets/capture-ordonnance.png)
-        -->
         <div class="screenshot-grid">
           <figure class="screenshot-card">
             <img src="assets/capture-patient.png" alt="Capture d'écran : dossier patient" loading="lazy" />
@@ -335,11 +290,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION — KONSULTAM (application mobile gratuite)
-         Produit distinct de Konsulta : mis en valeur séparément pour
-         sa propre visibilité, avec son propre appel au téléchargement.
-    ============================================================ -->
+    <!-- KonsultaM -->
     <section class="section konsultam" id="konsultam">
       <div class="wrap konsultam-grid">
         <div class="konsultam-text">
@@ -351,7 +302,8 @@
           <p>
             KonsultaM est une application mobile pensée pour les médecins,
             pharmaciens et professionnels de santé à Madagascar. Elle permet
-            de retrouver en quelques secondes un médicament à Madagascar, sans connexion
+            de retrouver en quelques secondes un médicament disposant d'une
+            AMM, avec sa fiche pharmacologique complète — sans connexion
             internet une fois installée.
           </p>
 
@@ -382,22 +334,10 @@
             <img src="assets/konsultam-logo.png" alt="Logo KonsultaM" class="konsultam-card-logo" />
             <h3>KonsultaM pour Android</h3>
             <p>Application gratuite · Fonctionne hors connexion</p>
-            <!--
-              LIEN DE TÉLÉCHARGEMENT — Release GitHub (lien direct vers l'APK).
-              Pour publier une nouvelle version : Releases → Create a new
-              release → glisser le nouveau KonsultaM.apk → publier, puis
-              mettre à jour le tag/href ci-dessous si besoin.
-            -->
+            <!-- lien Release GitHub vers l'apk -->
             <a href="https://github.com/Rnpfabien/Konsulta-site/releases/download/V2.0/KonsultaM.apk" class="btn btn-primary btn-large" download>⬇ Télécharger KonsultaM (gratuit)</a>
 
-            <!--
-              PARTAGE WHATSAPP — texte pré-rempli avec un lien vers la
-              section de téléchargement du site (pas directement vers
-              l'APK), pour que la personne arrive sur une page qui
-              explique l'appli avant de télécharger. Adaptez l'URL si
-              l'adresse du site change (voir le <link rel="canonical">
-              en haut du fichier).
-            -->
+            <!-- renvoie vers la section de téléchargement, pas directement vers l'apk -->
             <a
               href="https://wa.me/?text=KonsultaM%20est%20disponible%20%E2%80%94%20une%20app%20gratuite%20pour%20retrouver%20un%20m%C3%A9dicament%20en%20quelques%20secondes%2C%20m%C3%AAme%20hors%20connexion%20%3A%20https%3A//rnpfabien.github.io/Konsulta-site/%23konsultam-telechargement"
               class="btn btn-ghost btn-large konsultam-share"
@@ -419,9 +359,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION — TUTORIELS VIDÉO
-    ============================================================ -->
     <section class="section tutorials" id="tutoriels">
       <div class="wrap">
         <p class="eyebrow center">Apprendre</p>
@@ -453,9 +390,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION — TÉLÉCHARGEMENT
-    ============================================================ -->
+    <!-- téléchargement -->
     <section class="section download" id="telechargement">
       <div class="wrap download-inner">
         <p class="eyebrow center">Téléchargement</p>
@@ -489,9 +424,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION — FAQ (accordéon géré par script.js)
-    ============================================================ -->
     <section class="section faq" id="faq">
       <div class="wrap faq-wrap">
         <p class="eyebrow center">Questions fréquentes</p>
@@ -553,9 +485,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION — CONTACT
-    ============================================================ -->
+    <!-- contact -->
     <section class="section contact" id="contact">
       <div class="wrap contact-grid">
         <div class="contact-text">
@@ -598,9 +528,6 @@
 
   </main>
 
-  <!-- ============================================================
-       PIED DE PAGE
-  ============================================================ -->
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <div class="footer-brand">
