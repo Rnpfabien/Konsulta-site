@@ -181,6 +181,93 @@ button { font-family: inherit; }
 }
 
 /* ============================================================
+   SOUS-MENU "NOS LOGICIELS" (Konsulta / KonsultaM)
+   Ouverture au survol sur desktop, au clic sur mobile (voir script.js)
+   ============================================================ */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  padding: 0;
+}
+.nav-dropdown-toggle:hover { color: var(--blue-bright); }
+.nav-dropdown-arrow { font-size: 0.7em; transition: transform 0.15s ease; }
+.nav-dropdown.is-open .nav-dropdown-arrow { transform: rotate(180deg); }
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lift);
+  padding: 8px;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 60;
+}
+.nav-dropdown-menu a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--ink);
+}
+.nav-dropdown-menu a:hover { background: var(--paper-alt); }
+.nav-dropdown-menu a strong { font-family: var(--font-display); font-size: 0.92rem; display: flex; align-items: center; gap: 6px; }
+.nav-dropdown-menu a span { font-size: 0.8rem; color: var(--muted); }
+.nav-dropdown-icon { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; }
+
+/* Ouverture : survol desktop OU classe .is-open (clic, géré en JS pour mobile + accessibilité) */
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.is-open .nav-dropdown-menu { display: flex; }
+
+.badge-free {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--mint);
+  background: var(--mint-soft);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* Repère "Nouveau" sur le déclencheur du sous-menu, pour attirer l'oeil
+   (surtout utile sur mobile, où il n'y a pas de survol pour découvrir
+   le sous-menu par hasard). */
+.badge-new {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: #E0533D;
+  padding: 2px 7px;
+  border-radius: 999px;
+  animation: pulse-badge 2.2s ease-in-out infinite;
+}
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.08); }
+}
+
+/* ============================================================
    HERO
    ============================================================ */
 .hero { padding: 72px 0 0; overflow: hidden; }
@@ -238,6 +325,8 @@ button { font-family: inherit; }
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+.stat-track a { color: var(--white); text-decoration: underline; text-decoration-color: rgba(255,255,255,0.5); }
+.stat-track a:hover { text-decoration-color: var(--white); }
 
 /* ============================================================
    SECTIONS GÉNÉRIQUES
@@ -373,6 +462,52 @@ button { font-family: inherit; }
 .download-info p { color: rgba(255,255,255,0.7); margin: 0; font-size: 0.92rem; }
 .download-note { margin-top: 24px; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
 .download-note a { color: var(--white); text-decoration: underline; }
+
+/* ============================================================
+   SECTION KONSULTAM (produit distinct, app mobile gratuite)
+   ============================================================ */
+.konsultam { background: var(--mint-soft); }
+.konsultam-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.konsultam-points { margin-top: 24px; }
+.konsultam-eyebrow { display: flex; align-items: center; gap: 8px; }
+.konsultam-eyebrow-logo { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px var(--white); }
+.konsultam-disclaimer {
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+.konsultam-download-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 36px;
+  text-align: center;
+  position: sticky;
+  top: 100px;
+}
+.konsultam-card-logo {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  box-shadow: var(--shadow-card);
+}
+.konsultam-download-card h3 { margin-bottom: 6px; }
+.konsultam-download-card p { color: var(--muted); font-size: 0.9rem; }
+.konsultam-download-card .btn { width: 100%; margin: 12px 0 8px; }
+.konsultam-share { margin-top: 0 !important; }
+.konsultam-note { font-size: 0.78rem; color: var(--muted); margin: 0; }
+.konsultam-install-help { margin-top: 14px; text-align: left; background: var(--paper-alt); border-radius: var(--radius-sm); padding: 12px 14px; }
 
 /* FAQ */
 .faq { background: var(--white); }
@@ -512,8 +647,25 @@ button { font-family: inherit; }
   .primary-nav a { padding: 12px 4px; border-bottom: 1px solid var(--line); }
   .nav-cta { text-align: center; margin-top: 8px; }
 
+  /* Sous-menu KonsultaM en accordéon intégré au menu mobile (plus de survol au tactile) */
+  .nav-dropdown { border-bottom: 1px solid var(--line); }
+  .nav-dropdown-toggle { width: 100%; justify-content: space-between; padding: 12px 4px; }
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: var(--paper-alt);
+    display: none;
+    padding: 4px 4px 10px;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu { display: none; } /* pas de survol sur mobile */
+  .nav-dropdown.is-open .nav-dropdown-menu { display: flex; }
+
   .feature-grid { grid-template-columns: 1fr; }
   .tutorial-grid { grid-template-columns: 1fr; }
   .download-card { flex-direction: column; text-align: center; }
+  .konsultam-grid { grid-template-columns: 1fr; gap: 32px; }
+  .konsultam-download-card { position: static; }
   .section { padding: 64px 0; }
 }
