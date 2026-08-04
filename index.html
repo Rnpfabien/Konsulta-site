@@ -4,17 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Konsulta — Simplifiez la gestion de votre cabinet médical</title>
-  <meta name="description" content="Konsulta est un logiciel de gestion de cabinet médical : patients, consultations, ordonnances, factures et statistiques, réunis dans une seule application simple." />
+  <meta name="description" content="Konsulta est un logiciel de gestion de cabinet médical : patients, consultations, ordonnances, factures et statistiques, réunis dans une seule application simple. Découvrez aussi KonsultaM, notre application mobile gratuite de recherche de médicaments à Madagascar." />
+
+  <!--
+    URL CANONIQUE — à adapter si votre site GitHub Pages a une adresse
+    différente (Réglages du dépôt → Pages → l'URL affichée en haut).
+  -->
+  <link rel="canonical" href="https://rnpfabien.github.io/Konsulta-site/" />
+
+  <!-- ============================================================
+       PARTAGE SOCIAL (Open Graph / Twitter Card)
+       Contrôle l'aperçu affiché quand le lien du site est partagé sur
+       WhatsApp, Facebook, Messenger, etc. Remplacez og:url si l'adresse
+       finale du site diffère de celle indiquée ci-dessus.
+  ============================================================ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Konsulta" />
+  <meta property="og:title" content="Konsulta — Logiciel de gestion de cabinet médical" />
+  <meta property="og:description" content="Patients, consultations, ordonnances, factures et statistiques réunis dans un seul logiciel. Découvrez aussi KonsultaM, l'app mobile gratuite de recherche de médicaments à Madagascar." />
+  <meta property="og:image" content="https://rnpfabien.github.io/Konsulta-site/assets/logo-icon.png" />
+  <meta property="og:url" content="https://rnpfabien.github.io/Konsulta-site/" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Konsulta — Logiciel de gestion de cabinet médical" />
+  <meta name="twitter:description" content="Patients, consultations, ordonnances, factures et statistiques réunis dans un seul logiciel. Découvrez aussi KonsultaM, gratuite." />
+  <meta name="twitter:image" content="https://rnpfabien.github.io/Konsulta-site/assets/logo-icon.png" />
 
   <!-- Polices : Manrope pour les titres (caractère, confiance), Inter pour le texte courant (lisibilité) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link ="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Favicon texte simple (aucun fichier image requis) -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- Favicon (le fichier assets/favicon.png n'existait pas — on utilise le logo réel) -->
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+
+  <!-- ============================================================
+       DONNÉES STRUCTURÉES (schema.org) — aide Google à comprendre
+       qu'il s'agit d'un logiciel, et à afficher un résultat enrichi.
+  ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Konsulta",
+    "applicationCategory": "MedicalApplication",
+    "operatingSystem": "Windows",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "MGA",
+      "description": "Essai gratuit de 10 jours"
+    },
+    "description": "Logiciel de gestion de cabinet médical : patients, consultations, ordonnances, factures et statistiques."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "KonsultaM",
+    "applicationCategory": "MedicalApplication",
+    "operatingSystem": "Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "MGA"
+    },
+    "description": "Application mobile gratuite de recherche de médicaments à Madagascar, fonctionnant hors connexion."
+  }
+  </script>
 </head>
 <body>
 
@@ -39,6 +99,29 @@
         <a href="#fonctionnalites">Fonctionnalités</a>
         <a href="#tutoriels">Tutoriels</a>
         <a href="#telechargement">Téléchargement</a>
+
+        <!--
+          SOUS-MENU — NOS LOGICIELS
+          Regroupe Konsulta (cabinet médical) et KonsultaM (app mobile
+          gratuite). Sur desktop : s'ouvre au clic/survol via CSS.
+          Sur mobile : s'ouvre au clic, géré par script.js (bloc 1bis).
+        -->
+        <div class="nav-dropdown" id="navDropdown">
+          <button class="nav-dropdown-toggle" id="navDropdownToggle" aria-expanded="false" aria-controls="navDropdownMenu">
+            Nos logiciels <span class="badge-new" aria-hidden="true">Nouveau</span> <span class="nav-dropdown-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="#accueil">
+              <strong><img src="assets/logo-icon.png" alt="" class="nav-dropdown-icon" /> Konsulta</strong>
+              <span>Gestion de cabinet médical</span>
+            </a>
+            <a href="#konsultam">
+              <strong><img src="assets/konsultam-logo.png" alt="" class="nav-dropdown-icon" /> KonsultaM <span class="badge-free">Gratuit</span></strong>
+              <span>App mobile de référence médicamenteuse</span>
+            </a>
+          </div>
+        </div>
+
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
@@ -95,6 +178,7 @@
           <span>🖥️ Un seul poste ou plusieurs, en réseau</span>
           <span>📄 Ordonnances &amp; certificats générés automatiquement</span>
           <span>🇲🇬 Conçu pour les cabinets à Madagascar</span>
+          <span>📱 <a href="#konsultam">KonsultaM</a> — notre app mobile gratuite de recherche de médicaments</span>
           <!-- dupliqué pour un défilement continu sans coupure -->
           <span aria-hidden="true">🗂️ Dossiers patients illimités</span>
           <span aria-hidden="true">💊 Base de médicaments malgache intégrée</span>
@@ -102,6 +186,7 @@
           <span aria-hidden="true">🖥️ Un seul poste ou plusieurs, en réseau</span>
           <span aria-hidden="true">📄 Ordonnances &amp; certificats générés automatiquement</span>
           <span aria-hidden="true">🇲🇬 Conçu pour les cabinets à Madagascar</span>
+          <span aria-hidden="true">📱 <a href="#konsultam" tabindex="-1">KonsultaM</a> — notre app mobile gratuite de recherche de médicaments</span>
         </div>
       </div>
     </section>
@@ -246,6 +331,88 @@
             <img src="assets/capture-statistiques.png" alt="Capture d'écran : tableau de statistiques" loading="lazy" />
             <figcaption>Statistiques du cabinet</figcaption>
           </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — KONSULTAM (application mobile gratuite)
+         Produit distinct de Konsulta : mis en valeur séparément pour
+         sa propre visibilité, avec son propre appel au téléchargement.
+    ============================================================ -->
+    <section class="section konsultam" id="konsultam">
+      <div class="wrap konsultam-grid">
+        <div class="konsultam-text">
+          <p class="eyebrow konsultam-eyebrow">
+            <img src="assets/konsultam-logo.png" alt="Logo KonsultaM" class="konsultam-eyebrow-logo" />
+            KonsultaM <span class="badge-free">100% gratuit</span>
+          </p>
+          <h2>La référence médicamenteuse dans la poche, même hors connexion</h2>
+          <p>
+            KonsultaM est une application mobile pensée pour les médecins,
+            pharmaciens et professionnels de santé à Madagascar. Elle permet
+            de retrouver en quelques secondes un médicament disposant d'une
+            AMM, avec sa fiche pharmacologique complète — sans connexion
+            internet une fois installée.
+          </p>
+
+          <ul class="mini-points konsultam-points">
+            <li>
+              <strong>Recherche instantanée</strong>
+              <span>Par nom commercial, DCI (dénomination commune internationale) ou laboratoire.</span>
+            </li>
+            <li>
+              <strong>Favoris, historique &amp; notes</strong>
+              <span>Retrouvez vos médicaments consultés récemment et ajoutez vos propres notes.</span>
+            </li>
+            <li>
+              <strong>100 % hors-ligne</strong>
+              <span>Fonctionne sans connexion internet une fois l'application installée.</span>
+            </li>
+          </ul>
+
+          <p class="konsultam-disclaimer">
+            ⚠️ KonsultaM est un outil d'aide à la recherche, à titre indicatif.
+            Le professionnel de santé reste responsable de s'informer des
+            recommandations les plus récentes et de sa prescription.
+          </p>
+        </div>
+
+        <div class="konsultam-download" id="konsultam-telechargement">
+          <div class="konsultam-download-card">
+            <img src="assets/konsultam-logo.png" alt="Logo KonsultaM" class="konsultam-card-logo" />
+            <h3>KonsultaM pour Android</h3>
+            <p>Application gratuite · Fonctionne hors connexion</p>
+            <!--
+              LIEN DE TÉLÉCHARGEMENT — Release GitHub (lien direct vers l'APK).
+              Pour publier une nouvelle version : Releases → Create a new
+              release → glisser le nouveau KonsultaM.apk → publier, puis
+              mettre à jour le tag/href ci-dessous si besoin.
+            -->
+            <a href="https://github.com/Rnpfabien/Konsulta-site/releases/download/V2.0/KonsultaM.apk" class="btn btn-primary btn-large" download>⬇ Télécharger KonsultaM (gratuit)</a>
+
+            <!--
+              PARTAGE WHATSAPP — texte pré-rempli avec le lien de
+              téléchargement, pratique pour la diffusion entre confrères.
+              Le texte est encodé dans l'URL ci-dessous ; modifiez-le si besoin.
+            -->
+            <a
+              href="https://wa.me/?text=KonsultaM%20est%20disponible%20%E2%80%94%20une%20app%20gratuite%20pour%20retrouver%20un%20m%C3%A9dicament%20en%20quelques%20secondes%2C%20m%C3%AAme%20hors%20connexion%20%3A%20https%3A%2F%2Fgithub.com%2FRnpfabien%2FKonsulta-site%2Freleases%2Fdownload%2FV2.0%2FKonsultaM.apk"
+              class="btn btn-ghost btn-large konsultam-share"
+              target="_blank" rel="noopener">
+              💬 Partager sur WhatsApp
+            </a>
+
+            <p class="konsultam-note">Android uniquement pour le moment.</p>
+            <p class="konsultam-note konsultam-install-help">
+              L'installation est bloquée ? Android affiche parfois
+              « Source inconnue » pour les applications hors Play Store.
+              Autorisez l'installation depuis votre navigateur/gestionnaire
+              de fichiers dans la fenêtre qui s'affiche, puis relancez
+              l'installation — c'est normal et sans danger pour une
+              application que vous avez choisie vous-même.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -441,6 +608,7 @@
       <nav class="footer-nav">
         <a href="#accueil">Accueil</a>
         <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#konsultam">KonsultaM</a>
         <a href="#tutoriels">Tutoriels</a>
         <a href="#telechargement">Téléchargement</a>
         <a href="#contact">Contact</a>
