@@ -31,6 +31,84 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ----------------------------------------------------------
+     1bis) SOUS-MENU "NOS LOGICIELS" (Konsulta / KonsultaM)
+     L'ouverture au survol pur en CSS (:hover) se refermait dès que
+     la souris traversait le petit espace visuel entre le bouton et
+     le sous-menu (le pointeur n'est alors sur aucun élément pendant
+     une fraction de seconde). On pilote donc l'ouverture/fermeture
+     ici en JS, avec un petit délai à la fermeture qui laisse le
+     temps de rejoindre le sous-menu sans qu'il se referme entre-temps.
+     Le clic reste géré en parallèle pour le mobile/tactile et le clavier.
+  ---------------------------------------------------------- */
+  const navDropdown = document.getElementById('navDropdown');
+  const navDropdownToggle = document.getElementById('navDropdownToggle');
+
+  if (navDropdown && navDropdownToggle) {
+    let closeTimer = null;
+
+    const openDropdown = () => {
+      clearTimeout(closeTimer);
+      navDropdown.classList.add('is-open');
+      navDropdownToggle.setAttribute('aria-expanded', 'true');
+    };
+    const scheduleClose = () => {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        navDropdown.classList.remove('is-open');
+        navDropdownToggle.setAttribute('aria-expanded', 'false');
+      }, 300); // délai suffisant pour traverser l'espace bouton → menu
+    };
+
+    // Survol (souris) : ouverture immédiate, fermeture après un court délai
+    navDropdown.addEventListener('mouseenter', openDropdown);
+    navDropdown.addEventListener('mouseleave', scheduleClose);
+
+    // Clic (mobile/tactile + clavier) : bascule ouverte/fermée
+    navDropdownToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const isOpen = navDropdown.classList.contains('is-open');
+      if (isOpen) {
+        clearTimeout(closeTimer);
+        navDropdown.classList.remove('is-open');
+        navDropdownToggle.setAttribute('aria-expanded', 'false');
+      } else {
+        openDropdown();
+      }
+    });
+
+    // Referme si on clique ailleurs sur la page
+    document.addEventListener('click', (event) => {
+      if (!navDropdown.contains(event.target)) {
+        clearTimeout(closeTimer);
+        navDropdown.classList.remove('is-open');
+        navDropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Referme après avoir choisi un lien du sous-menu (et referme le menu mobile parent)
+    navDropdown.querySelectorAll('.nav-dropdown-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        clearTimeout(closeTimer);
+        navDropdown.classList.remove('is-open');
+        navDropdownToggle.setAttribute('aria-expanded', 'false');
+        if (primaryNav) {
+          primaryNav.classList.remove('is-open');
+          navToggle?.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Navigation directe au simple survol (sans clic) sur desktop/souris :
+      // dès que la souris passe sur "Konsulta" ou "KonsultaM", on défile
+      // vers la section correspondante.
+      link.addEventListener('mouseenter', () => {
+        const targetId = link.getAttribute('href');
+        const target = targetId ? document.querySelector(targetId) : null;
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  }
+
+  /* ----------------------------------------------------------
      2) ACCORDÉON FAQ
      Un seul panneau ouvert à la fois. La hauteur est calculée
      dynamiquement pour permettre une transition en douceur.
